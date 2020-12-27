@@ -1,0 +1,27 @@
+{
+  "name": "save-jurimetry-data-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jurimetry/save-jurimetry-data-api.git",
+  "author": "Renan Winter Spatin <rwspatin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "start:debug": "nodemon --inspect src/server.js",
+    "correct:all": "yarn eslint --fix src --ext .js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "sucrase": "^3.16.0"
+  }
+}
