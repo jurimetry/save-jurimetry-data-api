@@ -10,10 +10,10 @@ module.exports = {
             max_memory_restart: '1G',
             exec_mode: 'cluster',
             env: {
-                NODE_ENV: 'development',
+                NODE_ENV: process.env.NODE_ENV || 'development',
             },
             env_production: {
-                NODE_ENV: 'production',
+                NODE_ENV: process.env.NODE_ENV || 'production',
             },
         },
         {
@@ -26,10 +26,10 @@ module.exports = {
             max_memory_restart: '1G',
             exec_mode: 'cluster',
             env: {
-                NODE_ENV: 'development',
+                NODE_ENV: process.env.NODE_ENV || 'development',
             },
             env_production: {
-                NODE_ENV: 'production',
+                NODE_ENV: process.env.NODE_ENV || 'production',
             },
         },
     ],
