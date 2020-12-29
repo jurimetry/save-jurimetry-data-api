@@ -6,11 +6,13 @@
   "author": "Renan Winter Spatin <rwspatin@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm run build & npm run start:pm2",
+    "start": "npm run build & npm run delete:pm2:all & npm run start:pm2",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "start:pm2": "pm2 start src/config/ecosystem.config.js",
     "start:api": "nodemon src/server.js",
     "start:debug": "nodemon --inspect src/server.js",
+    "start:rabbitmq": "node src/worker.js",
+    "delete:pm2:all": "pm2 delete all",
     "correct:all": "yarn eslint --fix src --ext .js"
   },
   "dependencies": {

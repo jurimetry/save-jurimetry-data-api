@@ -9,7 +9,7 @@ class JurisprudenceController {
                 return res.status(400).json({ error: 'User already exists' });
             }
 
-            return res.json(saved);
+            return res.status(200).json(saved);
         } catch {
             return res.status(400).json({ error: 'Error to save data' });
         }
