@@ -2,7 +2,7 @@ const queuesList = require('./RabbitmqQueues');
 
 module.exports = {
     config: {
-        url: 'amqps://host',
+        url: process.env.rabbiturl,
         queues: queuesList,
     },
 };
