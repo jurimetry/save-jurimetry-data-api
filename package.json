@@ -6,7 +6,7 @@
   "author": "Renan Winter Spatin <rwspatin@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm run install:sucrase & npm run build & npm run delete:pm2:all & npm run start:pm2",
+    "start": "npm run build & npm run start:pm2",
     "build": "sucrase ./src -d ./dist --transforms imports",
     "start:pm2": "pm2 start src/config/ecosystem.config.js",
     "start:api": "nodemon src/server.js",
@@ -17,6 +17,7 @@
     "install:sucrase": "npm install --save-dev sucrase"
   },
   "dependencies": {
+    "sucrase": "^3.16.0",
     "amqp": "^0.2.7",
     "amqplib": "^0.6.0",
     "express": "^4.17.1",
@@ -33,7 +34,6 @@
     "eslint-plugin-prettier": "^3.3.0",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1",
-    "sequelize-cli": "^6.2.0",
-    "sucrase": "^3.16.0"
+    "sequelize-cli": "^6.2.0"
   }
 }
