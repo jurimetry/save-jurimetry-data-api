@@ -14,7 +14,7 @@
     "start:rabbitmq": "node src/worker.js",
     "delete:pm2:all": "pm2 delete all",
     "correct:all": "yarn eslint --fix src --ext .js",
-    "install:sucrase": "npm install sucrase -g"
+    "install:sucrase": "npm install --save-dev sucrase"
   },
   "dependencies": {
     "amqp": "^0.2.7",
