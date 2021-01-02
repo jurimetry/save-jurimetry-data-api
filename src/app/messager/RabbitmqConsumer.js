@@ -31,6 +31,8 @@ class RabbitmqConsumer {
                             setTimeout(() => {
                                 console.log(' [x] Done');
                                 ch.ack(msg);
+
+                                queue.func(JSON.parse(msg));
                             }, queue.timeout);
                         },
                         {

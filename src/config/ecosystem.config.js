@@ -18,7 +18,7 @@ module.exports = {
         },
         {
             name: 'RabbitMq',
-            script: 'src/worker.js',
+            script: 'dist/worker.js',
             instances: '1',
             autorestart: false,
             args: ['--color'],
