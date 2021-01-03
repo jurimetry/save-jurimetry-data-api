@@ -32,7 +32,7 @@ class RabbitmqConsumer {
                                 console.log(' [x] Done');
                                 ch.ack(msg);
 
-                                queue.func(JSON.parse(msg));
+                                queue.func(JSON.parse(msg.content.toString()));
                             }, queue.timeout);
                         },
                         {
