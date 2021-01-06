@@ -7,6 +7,8 @@ module.exports = [
         prefetch: 10,
         timeout: 7000,
         noAck: false,
-        func: JurisprudenceService.save,
+        func() {
+            return JurisprudenceService.save;
+        },
     },
 ];
