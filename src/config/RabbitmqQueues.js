@@ -1,4 +1,4 @@
-const JurisprudenceService = require('../app/services/JurisprudenceService');
+const { save } = require('../app/services/JurisprudenceService');
 
 module.exports = [
     {
@@ -7,8 +7,10 @@ module.exports = [
         prefetch: 10,
         timeout: 7000,
         noAck: false,
-        func() {
-            return JurisprudenceService.save;
+        func(x) {
+            save(x)
+                .then(() => console.log('Saved'))
+                .catch((err) => console.error(err));
         },
     },
 ];
