@@ -1,6 +1,6 @@
 module.exports = {
-    up: async (queryInterface, Sequelize) =>
-        queryInterface.createTable('jurisprudence', {
+    up: async (queryInterface, Sequelize) => {
+        await queryInterface.createTable('Jurisprudences', {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -35,7 +35,10 @@ module.exports = {
                 type: Sequelize.DATE,
                 allowNull: false,
             },
-        }),
+        });
+    },
 
-    down: async (queryInterface) => queryInterface.dropTable('jurisprudence'),
+    down: async (queryInterface) => {
+        await queryInterface.dropTable('Jurisprudences');
+    },
 };

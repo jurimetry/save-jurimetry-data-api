@@ -1,6 +1,6 @@
-import Sequelize, { Model } from 'sequelize';
+const Sequelize = require('sequelize');
 
-class Jurisprudence extends Model {
+class Jurisprudence extends Sequelize.Model {
     static init(sequelize) {
         super.init(
             {
@@ -16,8 +16,11 @@ class Jurisprudence extends Model {
             }
         );
 
+        console.log('sequelize');
+        console.log(Jurisprudence === sequelize.models.Jurisprudence);
+
         return this;
     }
 }
 
-export default Jurisprudence;
+module.exports = Jurisprudence;

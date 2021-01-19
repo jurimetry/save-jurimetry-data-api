@@ -1,4 +1,4 @@
-import JurisprudenceService from '../services/JurisprudenceService';
+const JurisprudenceService = require('../services/JurisprudenceService');
 
 class JurisprudenceController {
     async store(req, res) {
@@ -16,4 +16,4 @@ class JurisprudenceController {
     }
 }
 
-export default new JurisprudenceController();
+module.exports = new JurisprudenceController();

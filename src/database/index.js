@@ -18,4 +18,4 @@ class Database {
     }
 }
 
-export default new Database();
+module.exports = new Database();
