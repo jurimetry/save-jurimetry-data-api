@@ -6,8 +6,8 @@ module.exports = {
     database: 'ddhhqf3lrh36s1',
     define: {
         timestamps: true,
-        undescored: true,
-        undescoredAll: true,
+        underscored: true,
+        underscoredAll: true,
     },
     dialectOptions: {
         ssl: {

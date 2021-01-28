@@ -2,22 +2,19 @@ const Jurisprudence = require('../models/Jurisprudence');
 
 module.exports.save = async (jJurisprudence) => {
     try {
-        // const jurisprudenceExists = await Jurisprudence.findOne({
-        //     where: {
-        //         court_abreviation: jJurisprudence.CourtAbreviation,
-        //         decision_date: jJurisprudence.DecisionDate,
-        //         class: jJurisprudence.Class,
-        //         decision: jJurisprudence.Decision,
-        //         court_decisor: jJurisprudence.CourtDecisor,
-        //         court_session: jJurisprudence.CourtSession,
-        //     },
-        // });
+        const jurisprudenceExists = await Jurisprudence.findOne({
+            where: {
+                court_abreviation: jJurisprudence.CourtAbreviation,
+                class: jJurisprudence.Class,
+                court_entry: jJurisprudence.Decision,
+                court_decisor: jJurisprudence.CourtDecisor,
+                court_session: jJurisprudence.CourtSession,
+            },
+        });
 
-        // if (jurisprudenceExists) {
-        //     return null;
-        // }
-
-        // console.log(await Jurisprudence.getTableName());
+        if (jurisprudenceExists) {
+            return null;
+        }
 
         let date = new Date(jJurisprudence.DecisionDate);
 
@@ -28,10 +25,11 @@ module.exports.save = async (jJurisprudence) => {
             court_abreviation: `${jJurisprudence.CourtAbreviation}`,
             decision_date: date,
             class: `${jJurisprudence.Class}`,
-            decision: `${jJurisprudence.Decision}`,
+            court_entry: `${jJurisprudence.CourtEntry}`,
             court_decisor: `${jJurisprudence.CourtDecisor}`,
             court_session: `${jJurisprudence.CourtSession}`,
-            created_at: Date.now(),
+            court_sumary: `${jJurisprudence.CourtSumary}`,
+            jurisprudence_alltext: `${jJurisprudence.AllJurisprudenceText}`,
         });
 
         return jurisprudence;

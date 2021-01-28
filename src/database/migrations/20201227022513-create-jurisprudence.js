@@ -1,6 +1,6 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('Jurisprudences', {
+        await queryInterface.createTable('jurisprudence', {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -19,7 +19,7 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            decision: {
+            court_entry: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
@@ -31,14 +31,22 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: true,
             },
+            court_sumary: {
+                type: Sequelize.STRING,
+                allowNull: true,
+            },
+            jurisprudence_alltext: {
+                type: Sequelize.STRING,
+                allowNull: true,
+            },
             created_at: {
                 type: Sequelize.DATE,
-                allowNull: false,
+                allowNull: true,
             },
         });
     },
 
     down: async (queryInterface) => {
-        await queryInterface.dropTable('Jurisprudences');
+        await queryInterface.dropTable('jurisprudences');
     },
 };
